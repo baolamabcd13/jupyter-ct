@@ -1,135 +1,100 @@
-# Student Performance Data Analysis 📊
+# 🎓 Student Performance Data Analysis
 
 Phân tích dữ liệu kết quả học tập của học sinh bằng Python & Jupyter Notebook.  
-Đây là đề tài cá nhân trong môn học **Kho Dữ Liệu và Khai Phá Dữ Liệu**.
+Đây là đề tài cá nhân trong môn học **Kho Dữ Liệu và Khai Phá Dữ Liệu** tại Đại học.
 
 ---
 
 ## 📁 Mục lục
 
 - [Giới thiệu](#giới-thiệu)
-- [Hướng dẫn cài đặt](#🚀-hướng-dẫn-cài-đặt)
-- [Chi tiết các bước thực hiện](#🔍-chi-tiết-các-bước-thực-hiện)
-- [Sườn báo cáo đề tài](#📄-sườn-báo-cáo-đề-tài)
-- [Tài liệu tham khảo](#📚-tài-liệu-tham-khảo)
+- [Cài đặt & chạy Notebook](#cài-đặt--chạy-notebook)
+- [Các bước thực hiện](#các-bước-thực-hiện)
+- [Cấu trúc báo cáo](#cấu-trúc-báo-cáo)
+- [Tài liệu tham khảo](#tài-liệu-tham-khảo)
 
 ---
 
 ## 📌 Giới thiệu
 
-- **Tên đề tài**: Phân tích dữ liệu kết quả học tập học sinh
-- **Nguồn dữ liệu**: Tập dữ liệu học sinh từ UCI hoặc Kaggle (gồm điểm học kỳ và các yếu tố ảnh hưởng)
-- **Mục tiêu**:
-  - Tiền xử lý, tổng hợp và trực quan hóa dữ liệu
-  - Áp dụng các kỹ thuật khai phá dữ liệu như phân cụm, phân lớp
-  - Đánh giá và so sánh mô hình bằng các phương pháp phổ biến
+- **Tên đề tài**: Phân tích và khai thác dữ liệu kết quả học tập học sinh
+- **Nguồn dữ liệu**: Student Performance Dataset (UCI hoặc Kaggle)
+- **Mục tiêu đề tài**:
+  - Tiền xử lý, thống kê, trực quan hóa dữ liệu
+  - Áp dụng kỹ thuật khai phá: phân lớp, phân cụm, luật kết hợp
+  - Đánh giá hiệu quả mô hình bằng các phương pháp phổ biến (ROC, Confusion Matrix,...)
 
 ---
 
-## 🚀 Hướng dẫn cài đặt
-
-### 1. Clone từ GitHub
+## 🚀 Cài đặt & chạy Notebook
 
 ```bash
+# Clone project
 git clone https://github.com/baolamabcd13/jupyter-ct.git
 cd jupyter-ct
-```
 
-### 2. Tạo môi trường ảo
-
-```bash
+# Tạo môi trường ảo
 python -m venv venv
 source venv/bin/activate
-```
 
-### 3. Cài đặt thư viện
-
-```bash
+# Cài thư viện
 pip install -r requirements.txt
-```
 
-### 4. Chạy Notebook
-
-```bash
+# Mở Notebook
 jupyter notebook
 ```
 
 ---
 
-## 🔍 Chi tiết các bước thực hiện
+## 🔍 Các bước thực hiện
 
-### Bước 1: Giới thiệu CSDL
+### 1. Giới thiệu và khảo sát dữ liệu
 
-- Trình bày nguồn gốc, nội dung của tập dữ liệu
-- Số lượng bản ghi, số lượng thuộc tính
-- Liệt kê tên thuộc tính, ý nghĩa, kiểu dữ liệu, số lượng giá trị thiếu và duy nhất
-
-### Bước 2: Phân tích thống kê thủ công
-
-- Tính toán descriptive statistics: min, max, mean, median, mode, five-number summary
-- Trực quan hóa:
-  - Boxplot, Histogram, Scatter Plot, QQ Plot cho các thuộc tính điểm (`G1`, `G2`, `G3`)
-  - Vẽ lại biểu đồ sau khi nhóm theo thuộc tính danh nghĩa (`sex`, `studytime`,...)
-
-### Bước 3: Đo lường tương đồng dữ liệu
-
-- Tính ma trận tương quan giữa các biến số
-- Tính độ đo cosine similarity cho 4 dòng dữ liệu dựa trên 4 thuộc tính (số, nhị phân, danh nghĩa, thứ tự)
-
-### Bước 4: Tiền xử lý, tổng hợp và trực quan hóa
-
-- Mã hóa các thuộc tính dạng chữ (Label Encoding)
-- Chuẩn hóa dữ liệu (StandardScaler)
-- Tổng hợp dữ liệu theo nhóm
-- Vẽ biểu đồ nâng cao: heatmap, pie chart, bar chart, pairplot
-
-### Bước 5: Khai thác dữ liệu
-
-- Phân cụm học sinh theo điểm (`G1`, `G2`, `G3`) bằng KMeans
-- Phân lớp giới tính bằng Decision Tree
-- Đánh giá mô hình bằng các chỉ số:
-  - Accuracy, Confusion Matrix
-  - Đồ thị ROC Curve và AUC score
-
----
-
-## 📄 Sườn Báo Cáo Đề Tài
-
-### 1. Giới thiệu CSDL
-
-- Mô tả dữ liệu, nguồn gốc, số lượng dòng & cột.
-- Mô tả từng thuộc tính (kiểu, null, unique, thống kê).
+- Nguồn gốc, số lượng dòng & cột
+- Mô tả chi tiết từng thuộc tính: kiểu dữ liệu, null, unique
 
 ### 2. Phân tích thống kê thủ công
 
-- Boxplot, Histogram, QQ Plot, Scatter Plot.
-- Nhóm theo danh nghĩa (giới tính...), vẽ lại biểu đồ.
+- Tính toán các giá trị thống kê (min, max, mean, median, mode, five-number summary)
+- Vẽ biểu đồ: Boxplot, Histogram, QQ Plot, Scatter Plot
+- Nhóm theo thuộc tính danh nghĩa (`sex`, `internet`,...) và trực quan hóa lại
 
-### 3. Đo lường tương đồng
+### 3. Đo lường tương đồng dữ liệu
 
-- Ma trận tương quan.
-- Cosine Similarity (4 dòng, 4 thuộc tính).
+- Ma trận tương quan (Heatmap)
+- Cosine Similarity giữa 4 dòng dữ liệu chọn mẫu
 
-### 4. Tiền xử lý, tổng hợp, trực quan hóa
+### 4. Tiền xử lý, tổng hợp và trực quan hóa
 
-- Mã hóa, chuẩn hóa, xử lý dữ liệu.
-- Tổng hợp & vẽ biểu đồ nâng cao (bar, pie, heatmap...).
+- Mã hóa biến danh nghĩa (One-Hot Encoding)
+- Chuẩn hóa dữ liệu (StandardScaler)
+- Tổng hợp dữ liệu theo nhóm (`groupby`)
+- Trực quan hóa nâng cao: pairplot, heatmap, bar chart,...
 
-### 5. Khai thác dữ liệu
+### 5. Khai phá dữ liệu
 
-- Áp dụng ít nhất 2 phương pháp: phân cụm, phân lớp, khai phá luật.
-- Đánh giá mô hình: accuracy, confusion matrix, ROC, silhouette...
+- 🧠 **Luật kết hợp**: sử dụng Apriori + phân tích lift, confidence
+- 🔍 **Phân lớp**: Random Forest + ROC Curve + classification report
+- 🔵 **Phân cụm**: KMeans kết hợp PCA → trực quan kết quả phân cụm
 
-### 6. Tài liệu tham khảo
+---
 
-- Ghi nguồn dữ liệu, thư viện sử dụng.
+## 📄 Cấu trúc báo cáo
+
+1. **Giới thiệu tập dữ liệu**
+2. **Phân tích thống kê thủ công**
+3. **Đo lường tương đồng & khác biệt**
+4. **Tiền xử lý, tổng hợp và trực quan hóa**
+5. **Khai phá dữ liệu**
+6. **Kết luận & đề xuất**
+7. **Tài liệu tham khảo**
 
 ---
 
 ## 📚 Tài liệu tham khảo
 
-- https://www.kaggle.com
-- https://scikit-learn.org
-- https://pandas.pydata.org
-- https://seaborn.pydata.org
-- https://matplotlib.org
+- [https://www.kaggle.com](https://www.kaggle.com)
+- [https://scikit-learn.org](https://scikit-learn.org)
+- [https://pandas.pydata.org](https://pandas.pydata.org)
+- [https://seaborn.pydata.org](https://seaborn.pydata.org)
+- [https://matplotlib.org](https://matplotlib.org)
